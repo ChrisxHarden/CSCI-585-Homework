@@ -53,9 +53,9 @@ def generate_data(file,rows,table,sample_data):
                         for cha in lis:
                             new_string+=cha
                     elif column!='address'and column!='name' and column !='url':
-                        lis=random.sample('zyxwvutsrqponmlkjihgfedcba',len(column))
-                        for cha in lis:
-                            new_string+=cha
+                        # lis=random.sample('zyxwvutsrqponmlkjihgfedcba',len(column))
+                        for cha in range(len(column)):
+                            new_string+=random.choice('zyxwvutsrqponmlkjihgfedcba')
                     elif column=='address':
                         new_string=address_generater()
                     elif column=='name':
@@ -84,8 +84,8 @@ def generate_data(file,rows,table,sample_data):
        
 table_name="sponsor"
 #sample=['adfadfpasdu','name','178102729',"address","url",20,7.9]
-sample=['adfadfpasdu','url',7000.57]
-generate_data(os.path.join(dir,"test.sql"),20,"sponsor_detail",sample)
+sample=['url',"lsdkajgfaosdif",200,"spadoifjapsdoigjapsoigdjapsiodgdjap",600]
+generate_data(os.path.join(dir,"test.sql"),10,"video",sample)
 
 # data=os.path.join(dir,table_name+".csv")
 # insert_data(os.path.join(dir,"Q1.sql"),table_name,data)
