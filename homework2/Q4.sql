@@ -104,3 +104,19 @@ insert into comment values('https://www.youtube.com/fst1ecy6qo','nhsamyzdfgoupk'
 insert into comment values('https://www.youtube.com/qjo096t8k7','wvzteadwuferrr', 'pqoweifgoiadj', 'selqqsrhyhcejdskzquppkbxtthedcxcmefqblisfw', 95, 7);
 insert into comment values('https://www.youtube.com/0v6h5tckdg','macqpcbbqsjuhp', 'pqoweifgoiadj', 'tzslzepojmwzbdygfdzbdauhzyoilweozljtchnrfs', 95, 8);
 insert into comment values('https://www.youtube.com/qjo096t8k7','wlhxcprnkxnnen', 'pqoweifgoiadj', 'mafbjebdvsfdjxdyebeqocdfbnprpyujotsycwkkqc', 95, 1);
+
+--insert data into comment table
+
+
+--------------------finish inserting data------------------
+
+select * 
+from(select info_video.keyword,avg(sentiment) as avgs --select the keywords and its average sentiment score
+from video,info_video,comment 
+where video.video_url=comment.video_url and--join video and comment table
+    video.video_url=info_video.video_url--join video and info_video table
+    
+group by info_video.keyword  --as info_video table stores(video_url, keyword) as a data entry, using the group by clause will group the videos into different keywords. same video could be grouped into different keywords with multiple copies.
+) as s1
+
+order by s1.avgs desc-- make sure the keyword with the highest average sentiment score is shown at first 
