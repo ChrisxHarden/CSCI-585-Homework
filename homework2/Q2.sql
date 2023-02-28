@@ -157,4 +157,14 @@ insert into upload_request values('apsdoigjapsod','MarvelEntertainment_club','ht
 --finish inserting data
 
 
-
+select s1.views*1.0/s1.likes*1.0 as ratio , --to ensure the result to be float
+s1.channel_name,
+s1.video_title
+from (--use the inner select to select those videos created by users with 'Marvel Entertainment' in their name and their likes and views for further calculation
+     select statitics.views,statitics.likes,request.channel_name, video.video_title
+     from upload_request request, account,video,statitics
+     where request.owner_user_id=account.owner_user_id and --join upload_request and account with user_id
+            account.owner_name like '%Marvel Entertainment%' and -- make sure only the accounts' user_name with 'Marvel Entertainment' are chosen
+            request.video_url=video.video_url and -- join upload_request and video
+            video.video_url=statitics.video_url--join video and statics
+     order by video.video_title) as s1 
