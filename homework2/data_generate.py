@@ -48,11 +48,11 @@ def generate_data(file,rows,table,sample_data):
                 
                 if type(column)==str:
                     new_string=""
-                    if column[0]>='0' and column[0]<='9' and column!='address'and column!='name' and column !='url':
+                    if column[0]>='0' and column[0]<='9' and column!='address'and column!='name' and column !='url'and column!='user_pool':
                         lis=random.sample('1234567890',len(column))
                         for cha in lis:
                             new_string+=cha
-                    elif column!='address'and column!='name' and column !='url':
+                    elif column!='address'and column!='name' and column !='url' and column!="user_pool":
                         # lis=random.sample('zyxwvutsrqponmlkjihgfedcba',len(column))
                         for cha in range(len(column)):
                             new_string+=random.choice('zyxwvutsrqponmlkjihgfedcba')
@@ -61,8 +61,11 @@ def generate_data(file,rows,table,sample_data):
                     elif column=='name':
                         new_string=name_generater()
                         
-                    else:
+                    elif column=='url':
                         new_string=url_generater()
+                    else:
+                        new_string=random.choice(['dsapdfoiasdfh','pqoweifgoiadj','apsdoigjapsod'])
+                        
                         
                     
 
@@ -84,8 +87,8 @@ def generate_data(file,rows,table,sample_data):
        
 table_name="sponsor"
 #sample=['adfadfpasdu','name','178102729',"address","url",20,7.9]
-sample=['url',"lsdkajgfaosdif",200,"spadoifjapsdoigjapsoigdjapsiodgdjap",600]
-generate_data(os.path.join(dir,"test.sql"),10,"video",sample)
+sample=["lsdkajgfaosdif","user_pool","spadoifjapsdoigjapsoigdjapsiodgdjapdsfasdf", 10,1]
+generate_data(os.path.join(dir,"test.sql"),10,"comment",sample)
 
 # data=os.path.join(dir,table_name+".csv")
 # insert_data(os.path.join(dir,"Q1.sql"),table_name,data)
