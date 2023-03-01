@@ -127,31 +127,31 @@ insert into upload_request values('midfcivf','lazyaf','https://www.youtube.com/1
 select account.owner_name,channel.channel_name,channel.total_sub
 from
 
-account,channel,
+account,channel,-- the selection below is going to select those channels which uploaded at least 1 video per week last month and owner is in US
 (select s1.channel_name as ch_name
 from
 (select first.channel_name 
 from (
     select distinct upload_request.channel_name
     from upload_request,account
-    where upload_request.upload_date between '2023-01-01' and '2023-01-07' and
-    upload_request.owner_user_id=account.owner_user_id and
+    where upload_request.upload_date between '2023-01-01' and '2023-01-07' and-- make sure the video is uploaded in 1st week
+    upload_request.owner_user_id=account.owner_user_id and--join upload_request and account to find whether the uploaded lives in US
     account.user_address like '%,US'
 
     
-)as first) as s1,
+)as first) as s1,-- s1 is going to select those channels which uploaded at least 1 video in the first week last month and owner is in US
 
 (select second.channel_name 
 from
 (
     select distinct upload_request.channel_name
     from upload_request,account
-    where upload_request.upload_date between '2023-01-08' and '2023-01-14' and
-    upload_request.owner_user_id=account.owner_user_id and
+    where upload_request.upload_date between '2023-01-08' and '2023-01-14' and-- make sure the video is uploaded in 2nd week
+    upload_request.owner_user_id=account.owner_user_id and--join upload_request and account to find whether the uploaded lives in US
     account.user_address like '%,US'
 
     
-)as second) as s2,
+)as second) as s2,-- s2 is going to select those channels which uploaded at least 1 video in the second week last month and owner is in US
 
 
 (select third.channel_name 
@@ -159,47 +159,54 @@ from
 (
     select distinct upload_request.channel_name
     from upload_request,account
-    where upload_request.upload_date between '2023-01-15' and '2023-01-21' and
-    upload_request.owner_user_id=account.owner_user_id and
+    where upload_request.upload_date between '2023-01-15' and '2023-01-21' and-- make sure the video is uploaded in 3rd week
+    upload_request.owner_user_id=account.owner_user_id and--join upload_request and account to find whether the uploaded lives in US
     account.user_address like '%,US'
 
     
-)as third) as s3,
+)as third) as s3,-- s3 is going to select those channels which uploaded at least 1 video in the third week last month and owner is in US
 
 (select fourth.channel_name 
 from
 (
     select distinct upload_request.channel_name
     from upload_request,account
-    where upload_request.upload_date between '2023-01-22' and '2023-01-28' and
-    upload_request.owner_user_id=account.owner_user_id and
+    where upload_request.upload_date between '2023-01-22' and '2023-01-28' and-- make sure the video is uploaded in 4th week
+    upload_request.owner_user_id=account.owner_user_id and--join upload_request and account to find whether the uploaded lives in US
     account.user_address like '%,US'
 
     
-)as fourth) as s4,
+)as fourth) as s4,-- s4 is going to select those channels which uploaded at least 1 video in the fourth week last month and owner is in US
 
 (select fifth.channel_name 
 from
 (
     select distinct upload_request.channel_name
     from upload_request,account
-    where upload_request.upload_date between '2023-01-29' and '2023-01-31' and
-    upload_request.owner_user_id=account.owner_user_id and
+    where upload_request.upload_date between '2023-01-29' and '2023-01-31' and-- make sure the video is uploaded in 5th week
+    upload_request.owner_user_id=account.owner_user_id and--join upload_request and account to find whether the uploaded lives in US
     account.user_address like '%,US'
 
     
-)as fifth) as s5
+)as fifth) as s5-- s5 is going to select those channels which uploaded at least 1 video in the fifth week last month and owner is in US
 
 where
-s1.channel_name =s2.channel_name and
-s2.channel_name =s3.channel_name and
-s3.channel_name =s4.channel_name and
-s4.channel_name =s5.channel_name 
+s1.channel_name =s2.channel_name and-- join s1 and s2
+
+s2.channel_name =s3.channel_name and-- join s2 and s3
+s3.channel_name =s4.channel_name and-- join s3 and s4
+s4.channel_name =s5.channel_name -- join s4 and s5
+
+----these conditions is aimed to find the channels qualified in 1st week and 
+----those in 2nd week and those in 3rd week and those in 4th week and those in 5th week 
+
+----And combine them together to see if any channel is qualified in all these 5 weeks,if such channel exists, those are the channels we need 
 
 
-) as final_channel
+) as final_channel----the qualified channel is choosen as final_channel
 
-where account.owner_user_id=channel.owner_user_id and channel.channel_name=final_channel.ch_name
+where account.owner_user_id=channel.owner_user_id and --join account and channel to get account owner's information
+channel.channel_name=final_channel.ch_name--join channel and qualified channel
 
 
 
