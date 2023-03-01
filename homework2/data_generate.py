@@ -154,7 +154,7 @@ channels=[["asdfaosidf","1st channel","owner1",101,135],
           ["acmzxvh9ia","Ca channel","owner3",103,186],
           ["qeirgudfna","Saty channel","owner3",104,131]]
 
-account_record=generate_account(os.path.join(dir,"test.sql"),200,"account")
-sub_gen(account_record,channels,os.path.join(dir,"test.sql"))
+account_record=generate_account(os.path.join(dir,"test.sql"),4,"account")
+#sub_gen(account_record,channels,os.path.join(dir,"test.sql"))
 # data=os.path.join(dir,table_name+".csv")
 # insert_data(os.path.join(dir,"Q1.sql"),table_name,data)
