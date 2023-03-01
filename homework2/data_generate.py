@@ -143,9 +143,9 @@ def sub_gen(account,channel_pool,file):
        
 table_name="sponsor"
 #sample=['adfadfpasdu','name','178102729',"address","url",20,7.9]
-#sample=['url','asdpfasdigasudfn',100,"fuckyoustupidsatyyoufatassmotherfucker",600]
+sample=['url','asdpfasdigasudfn',100,"fuckyoustupidsatyyoufatassmotherfucker",600]
 # sample=['url_pool','user_pool']
-# generate_data(os.path.join(dir,"test.sql"),40,"video_his",sample)
+generate_data(os.path.join(dir,"test.sql"),5+4+5+1+1+1,"video",sample)
 
 channels=[["asdfaosidf","1st channel","owner1",101,135],
           ["sadfoiaspd","2nd channel","owner1",120,167],
@@ -154,7 +154,7 @@ channels=[["asdfaosidf","1st channel","owner1",101,135],
           ["acmzxvh9ia","Ca channel","owner3",103,186],
           ["qeirgudfna","Saty channel","owner3",104,131]]
 
-account_record=generate_account(os.path.join(dir,"test.sql"),4,"account")
+#account_record=generate_account(os.path.join(dir,"test.sql"),4,"account")
 #sub_gen(account_record,channels,os.path.join(dir,"test.sql"))
 # data=os.path.join(dir,table_name+".csv")
 # insert_data(os.path.join(dir,"Q1.sql"),table_name,data)
