@@ -1,6 +1,6 @@
 -- I am using bit.io for this question
 
-
+----please make sure starting with a new database or delete all exsiting tables before running this SQL code
 create table account(
     owner_user_id varchar not null unique,
     owner_name varchar,

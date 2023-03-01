@@ -1,5 +1,7 @@
 -- I am using bit.io for this question
 
+----please make sure starting with a new database or delete all exsiting tables before running this SQL code
+
 create table video(
     video_url varchar not null unique,
     video_title varchar not null,
@@ -166,7 +168,7 @@ insert into upload_request values('aosdigapsq','IamnotTaylor','https://www.youtu
 
 ------------------------------------finish inserting data------------------------------------------------
 
-
+--------------this is using user-id to idnetify Taylor Swift for someone who can also have the same name but not the real person-----
 select video.video_title,min(account.age) as min_age,max(account.age) as max_age
 from account,video,video_his,statitics,upload_request
 where video.video_url=video_his.video_url and -- join video and video_his table, video_his table stores video url and who watched the video, using (url,viewer_id)
@@ -185,5 +187,24 @@ having statitics.num_com=(select max(num_com)-- this is to get the maxmimum num_
               video.video_url=upload_request.video_url) as s1)-- this is to join video and upload request table
 
 
+-------------If We need to use name to identify, please comment the select clause on the top and Uncomment the one below
+-------------this will give you different answer because I added another account with the same name but different id
+
+-- select video.video_title,min(account.age) as min_age,max(account.age) as max_age
+-- from account,video,video_his,statitics,upload_request
+-- where video.video_url=video_his.video_url and -- join video and video_his table, video_his table stores video url and who watched the video, using (url,viewer_id)
+--       video_his.viewer_id=account.owner_user_id and-- join video_his and account, using the viewer_id in video_his to track the viewer's account to get his/her age
+--       upload_request.video_url=video.video_url and -- join video_his and upload_request
+--       account.user_name='Taylor Swift' and-- make sure the video is uploaded by the REAL Taylor Swift with user_id to identify
+--       statitics.video_url=video.video_url--join video and statitics to get the number of comments on each video
+
+-- group by video.video_title,statitics.num_com
+
+-- having statitics.num_com=(select max(num_com)-- this is to get the maxmimum num_com i.e. the number of comment on a video
+--        from (select stat.num_com as num_com,video.video_title --the inner select is meant to get the number of comments on each video created by Taylor Swift, here I use user_id to identify.
+--               from statitics stat,video,upload_request
+--               account.user_name='Taylor Swift' and -- make sure the creator of the video is Taylor Swift, here I use user_id to identify her as someone may have the same name as Taylor Swift 
+--               stat.video_url=video.video_url and -- this is to join stat and video 
+--               video.video_url=upload_request.video_url) as s1)-- this is to join video and upload request table
 
 
