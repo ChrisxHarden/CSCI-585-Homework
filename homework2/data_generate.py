@@ -143,7 +143,7 @@ def sub_gen(account,channel_pool,file):
        
 table_name="sponsor"
 #sample=['adfadfpasdu','name','178102729',"address","url",20,7.9]
-sample=['url','asdpfasdigasudfn',100,"fuckyoustupidsatyyoufatassmotherfucker",600]
+sample=['url','asdpfasdigasudfn',100,"asdasdfasdofaisdjuewg",600]
 # sample=['url_pool','user_pool']
 generate_data(os.path.join(dir,"test.sql"),5+4+5+1+1+1,"video",sample)
 
