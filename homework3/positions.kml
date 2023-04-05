@@ -45,5 +45,65 @@
 <styleUrl>#z1</styleUrl><Point><coordinates>-118.28594896953393,34.02329002510208</coordinates></Point>
 </Placemark>
 </Folder>
+<Folder>
+<Placemark>
+  <name>Convexhull</name>
+  <Polygon>
+  <outerBoundaryIs>
+    <LinearRing>
+      <coordinates>
+        -118.28563169504042,34.018644944798794
+        -118.2898859494536,34.02029232125172
+        -118.28894076625359,34.02902963407703
+        -118.28468766074468,34.02298542674074
+        -118.284107856,34.02165026847562
+        -118.28563169504042,34.018644944798794
+      </coordinates>
+    </LinearRing>
+  </outerBoundaryIs>
+  </Polygon>
+</Placemark>
+<Placemark>
+  <name>hometoSCI</name>
+  <LineString>
+    <coordinates>
+      -118.28894076625359,34.02902963407703
+      -118.28750615950914,34.023618721434865
+
+    </coordinates>
+  </LineString>
+</Placemark>
+<Placemark>
+  <name>hometoSCA</name>
+  <LineString>
+    <coordinates>
+      -118.28894076625359,34.02902963407703
+      -118.28594896953393,34.02329002510208
+
+    </coordinates>
+  </LineString>
+</Placemark>
+<Placemark>
+  <name>hometoBoothhall</name>
+  <LineString>
+    <coordinates>
+      -118.28894076625359,34.02902963407703
+      -118.28468766074468,34.02298542674074
+
+    </coordinates>
+  </LineString>
+</Placemark>
+<Placemark>
+  <name>hometoAnnenbergSchoolforcommunication</name>
+  <LineString>
+    <coordinates>
+      -118.28894076625359,34.02902963407703
+      -118.28615086708632,34.02203878368644
+
+    </coordinates>
+  </LineString>
+</Placemark>
+</Folder>
 <!-- tommy trojan -118.28567446220507,34.02051025073418 -->
+
 </Document></kml>
