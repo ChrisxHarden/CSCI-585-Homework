@@ -4,106 +4,174 @@
 <Style id="z1">
 <IconStyle><Icon><href>http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href></Icon></IconStyle>
 </Style>
+
+<Style id="MyStyle">
+<LineStyle>
+    <color>ffff00ff</color> 
+    <width>2</width>
+</LineStyle>
+<PolyStyle>
+    <color>50007072</color> 
+</PolyStyle>
+</Style>
+
 <Placemark><name>Home</name>
 <styleUrl>#z1</styleUrl><Point><coordinates>-118.28894076625359,34.02902963407703</coordinates></Point>
 </Placemark>
-<Folder>
-<Placemark><name>SGM</name>
-<styleUrl>#z1</styleUrl><Point><coordinates>-118.28922478493143,34.02113067920703</coordinates></Point>
-</Placemark>
-<Placemark><name>VivianHall</name>
-<styleUrl>#z1</styleUrl><Point><coordinates>-118.28830271359064,34.02001930086368</coordinates></Point>
-</Placemark>
-<Placemark><name>AnnenbergHall</name>
-<styleUrl>#z1</styleUrl><Point><coordinates>-118.28726773436372,34.02096691881233</coordinates></Point>
-</Placemark>
-<Placemark><name>AnnenbergSchoolforCommunication</name>
-<styleUrl>#z1</styleUrl><Point><coordinates>-118.28615086708632,34.02203878368644</coordinates></Point>
-</Placemark>
-<Placemark><name>MusicComplex</name>
-<styleUrl>#z1</styleUrl><Point><coordinates>-118.28552086713875,34.022288967362</coordinates></Point>
-</Placemark>
-<Placemark><name>SchoolofCinemaArts(SCI)</name>
-<styleUrl>#z1</styleUrl><Point><coordinates>-118.28750615950914,34.023618721434865</coordinates></Point>
-</Placemark>
-<Placemark><name>RonaldTutorHall</name>
-<styleUrl>#z1</styleUrl><Point><coordinates>-118.2898859494536,34.02029232125172</coordinates></Point>
-</Placemark>
-<Placemark><name>MarshalHoffmanHall</name>
-<styleUrl>#z1</styleUrl><Point><coordinates>-118.28563169504042,34.018644944798794</coordinates></Point>
-</Placemark>
-<Placemark><name>Accounting</name>
-<styleUrl>#z1</styleUrl><Point><coordinates>-118.28607145495864,34.01953489015522</coordinates></Point>
-</Placemark>
-<Placemark><name>SocialScienceBuilding</name>
-<styleUrl>#z1</styleUrl><Point><coordinates>-118.284107856,34.02165026847562</coordinates></Point>
-</Placemark>
-<Placemark><name>Boothhall</name>
-<styleUrl>#z1</styleUrl><Point><coordinates>-118.28468766074468,34.02298542674074</coordinates></Point>
-</Placemark>
-<Placemark><name>SchoolofCinemaArts(SCA)</name>
-<styleUrl>#z1</styleUrl><Point><coordinates>-118.28594896953393,34.02329002510208</coordinates></Point>
-</Placemark>
+<Folder><name>Schools_positions</name>
+    <Folder><name>Dornsife</name>
+        <Placemark><name>SGM</name>
+        <styleUrl>#z1</styleUrl><Point><coordinates>-118.28922478493143,34.02113067920703</coordinates></Point>
+        </Placemark>
+        <Placemark><name>SocialScienceBuilding</name>
+        <styleUrl>#z1</styleUrl><Point><coordinates>-118.284107856,34.02165026847562</coordinates></Point>
+        </Placemark>
+
+
+
+    </Folder>
+    <Folder><name>Viterbi</name>
+        <Placemark><name>VivianHall</name>
+        <styleUrl>#z1</styleUrl><Point><coordinates>-118.28830271359064,34.02001930086368</coordinates></Point>
+        </Placemark>
+        <Placemark><name>RonaldTutorHall</name>
+        <styleUrl>#z1</styleUrl><Point><coordinates>-118.2898859494536,34.02029232125172</coordinates></Point>
+        </Placemark>
+
+    </Folder>
+    <Folder><name>Annenberg</name>
+    <Placemark><name>AnnenbergHall</name>
+    <styleUrl>#z1</styleUrl><Point><coordinates>-118.28726773436372,34.02096691881233</coordinates></Point>
+    </Placemark>
+    <Placemark><name>AnnenbergSchoolforCommunication</name>
+    <styleUrl>#z1</styleUrl><Point><coordinates>-118.28615086708632,34.02203878368644</coordinates></Point>
+    </Placemark>    
+    </Folder>
+
+    <Folder><name>Thorton</name>
+        <Placemark><name>MusicComplex</name>
+        <styleUrl>#z1</styleUrl><Point><coordinates>-118.28552086713875,34.022288967362</coordinates></Point>
+        </Placemark> 
+        <Placemark><name>Boothhall</name>
+        <styleUrl>#z1</styleUrl><Point><coordinates>-118.28468766074468,34.02298542674074</coordinates></Point>
+        </Placemark>   
+    </Folder>
+    <Folder><name>SchoolofCinemaArts</name>
+        <Placemark><name>SchoolofCinemaArts(SCI)</name>
+        <styleUrl>#z1</styleUrl><Point><coordinates>-118.28750615950914,34.023618721434865</coordinates></Point>
+        </Placemark>
+        <Placemark><name>SchoolofCinemaArts(SCA)</name>
+        <styleUrl>#z1</styleUrl><Point><coordinates>-118.28594896953393,34.02329002510208</coordinates></Point>
+        </Placemark>
+
+    </Folder>
+
+
+    <Folder><name>Marshal</name>
+        <Placemark><name>MarshalHoffmanHall</name>
+        <styleUrl>#z1</styleUrl><Point><coordinates>-118.28563169504042,34.018644944798794</coordinates></Point>
+        </Placemark>
+        <Placemark><name>Accounting</name>
+        <styleUrl>#z1</styleUrl><Point><coordinates>-118.28607145495864,34.01953489015522</coordinates></Point>
+        </Placemark>
+    </Folder>
+    
 </Folder>
-<Folder>
-<Placemark>
-  <name>Convexhull</name>
-  <Polygon>
-  <outerBoundaryIs>
-    <LinearRing>
-      <coordinates>
-        -118.28563169504042,34.018644944798794
-        -118.2898859494536,34.02029232125172
-        -118.28894076625359,34.02902963407703
-        -118.28468766074468,34.02298542674074
-        -118.284107856,34.02165026847562
-        -118.28563169504042,34.018644944798794
-      </coordinates>
-    </LinearRing>
-  </outerBoundaryIs>
-  </Polygon>
-</Placemark>
-<Placemark>
-  <name>hometoSCI</name>
-  <LineString>
-    <coordinates>
-      -118.28894076625359,34.02902963407703
-      -118.28750615950914,34.023618721434865
 
-    </coordinates>
-  </LineString>
-</Placemark>
-<Placemark>
-  <name>hometoSCA</name>
-  <LineString>
-    <coordinates>
-      -118.28894076625359,34.02902963407703
-      -118.28594896953393,34.02329002510208
+<Folder><name>additions</name>
+    <Placemark>
+    <name>Convexhull</name>
+    <styleUrl>#MyStyle</styleUrl>
+    <Polygon>
+    <extrude>1</extrude>
 
-    </coordinates>
-  </LineString>
-</Placemark>
-<Placemark>
-  <name>hometoBoothhall</name>
-  <LineString>
-    <coordinates>
-      -118.28894076625359,34.02902963407703
-      -118.28468766074468,34.02298542674074
 
-    </coordinates>
-  </LineString>
-</Placemark>
-<Placemark>
-  <name>hometoAnnenbergSchoolforcommunication</name>
-  <LineString>
-    <coordinates>
-      -118.28894076625359,34.02902963407703
-      -118.28615086708632,34.02203878368644
+    <outerBoundaryIs>
+        <LinearRing>
+        <coordinates>
+            -118.28563169504042,34.018644944798794
+            -118.2898859494536,34.02029232125172
+            -118.28894076625359,34.02902963407703
+            -118.28468766074468,34.02298542674074
+            -118.284107856,34.02165026847562
+            -118.28563169504042,34.018644944798794
+        </coordinates>
+        </LinearRing>
+    </outerBoundaryIs>
+    
+    </Polygon>
+    </Placemark>
 
-    </coordinates>
-  </LineString>
-</Placemark>
+
+
+
+
+    <Folder><name>Nearest_neighbour</name>
+        <Placemark>
+        <name>hometoSCI</name>
+        <LineString>
+            <coordinates>
+            -118.28894076625359,34.02902963407703
+            -118.28750615950914,34.023618721434865
+
+            </coordinates>
+
+        </LineString>
+        <Style>
+            <LineStyle>
+                <color>ff0000ff</color>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        </Placemark>
+        <Placemark>
+        <name>hometoSCA</name>
+        <LineString>
+            <coordinates>
+            -118.28894076625359,34.02902963407703
+            -118.28594896953393,34.02329002510208
+
+            </coordinates>
+        </LineString>
+        <Style>
+            <LineStyle>
+                <color>ff0000ff</color>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        </Placemark>
+        <Placemark>
+        <name>hometoBoothhall</name>
+        <LineString>
+            <coordinates>
+            -118.28894076625359,34.02902963407703
+            -118.28468766074468,34.02298542674074
+
+            </coordinates>
+        </LineString>
+        <Style>
+            <LineStyle>
+                <color>ff0000ff</color>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        </Placemark>
+        <Placemark>
+        <name>hometoAnnenbergSchoolforcommunication</name>
+        <LineString>
+            <coordinates>
+            -118.28894076625359,34.02902963407703
+            -118.28615086708632,34.02203878368644
+
+            </coordinates>
+        </LineString>
+        <Style>
+            <LineStyle>
+                <color>ff0000ff</color>
+                <width>3</width>
+            </LineStyle>
+        </Style>
+        </Placemark>
+    </Folder>  
 </Folder>
-<!-- tommy trojan -118.28567446220507,34.02051025073418 -->
-
 </Document></kml>
